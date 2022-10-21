@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+*.local
+index.html
+.remote-assets
+components.d.ts
+.spago
+output
+.purs-*
+*.generated*
+.vite
+slides.save.md
+.psc-ide-port
