@@ -1,0 +1,8 @@
+---
+layout: center
+---
+
+```mermaid
+>>>src<<<
+```
+

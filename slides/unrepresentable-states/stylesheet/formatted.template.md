@@ -1,11 +1,9 @@
 ---
-layout: default
+layout: center
 ---
 
-# CSS Stylesheet
-
 ```css
->>>css_src<<<
+>>>src<<<
 ```
 
 <!--

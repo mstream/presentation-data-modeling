@@ -1,0 +1,6 @@
+---
+layout: section
+---
+
+# Arithmetic Mean
+

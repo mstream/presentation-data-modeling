@@ -1,0 +1,6 @@
+---
+layout: section
+---
+
+# Contact Details
+

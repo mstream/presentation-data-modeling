@@ -8,7 +8,7 @@ layout: center
 * sort lines in a valid order
 
 ```purescript {3}
->>>purs_src<<<
+>>>src<<<
 ```
 
 

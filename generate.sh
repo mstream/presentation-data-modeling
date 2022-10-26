@@ -17,45 +17,15 @@ function print_range() {
   sed -n "${1} p" "${2}"
 }
 
-function inject_css() {
-  local template_name="$1"
-  local src_name="$2"
-  local template_file="slides/${template_name}.template.md"
-  local generated_file="slides/${template_name}.generated.md"
-  local src_file="src/css/${src_name}.css"
-  local css_src_pattern='>>>css_src<<<'
-  local css_src=$(cat "${src_file}")
-  local template=$(cat "${template_file}")
-
-  if [ -z "${template}" ]; then
-    echo "the ${template_file} template does not exist"
-    exit 1
-  fi
-
-  if [ -z "${css_src}" ]; then
-    echo "the ${src_file} css source code does not exist"
-    exit 1
-  fi
-
-  local template_with_src=$(\
-    echo -n "${template}" | print_before "${css_src_pattern}";\
-    echo "${css_src}";\
-    echo -n "${template}" | print_after "${css_src_pattern}"\
-  )
-  
-  echo -n "${template_with_src}" > "${generated_file}"
-  echo "${template_file} -> ${generated_file}"
-}
-
-function inject_definition() {
+function inject_source() {
   local template_name="$1"
   local src_name="$2"
   local range="$3"
   local template_file="slides/${template_name}.template.md"
   local generated_file="slides/${template_name}.generated.md"
-  local src_file="src/purs/${src_name}.purs"
-  local purs_src_pattern='>>>purs_src<<<'
-  local purs_src=$(print_range "${range}" "${src_file}")
+  local src_file="src/${src_name}"
+  local src_pattern='>>>src<<<'
+  local src=$(print_range "${range}" "${src_file}")
   local template=$(cat "${template_file}")
 
   if [ -z "${template}" ]; then
@@ -63,21 +33,20 @@ function inject_definition() {
     exit 1
   fi
 
-  if [ -z "${purs_src}" ]; then
-    echo "the ${src_file} purerscript source code does not exist"
+  if [ -z "${src}" ]; then
+    echo "the ${src_file} source file does not contain any code"
     exit 1
   fi
 
   local template_with_src=$(\
-    echo -n "${template}" | print_before "${purs_src_pattern}";\
-    echo "${purs_src}";\
-    echo -n "${template}" | print_after "${purs_src_pattern}"\
+    echo -n "${template}" | print_before "${src_pattern}";\
+    echo "${src}";\
+    echo -n "${template}" | print_after "${src_pattern}"\
   )
   
   echo -n "${template_with_src}" > "${generated_file}"
   echo "${template_file} -> ${generated_file}"
 }
-
 
 function inject_executable() {
   local template_name="$1"
@@ -105,7 +74,7 @@ function inject_executable() {
   fi
 
   if [ -z "${purs_out}" ]; then
-    echo "the ${module_name} purerscript module did not produce any output"
+    echo "!!! the ${module_name} purerscript module did not produce any output"
   fi
 
   local template_with_src=$(\
@@ -125,80 +94,166 @@ function inject_executable() {
 }
 
 find slides -iname '*.generated.md' -exec rm {} \; 
+find src/js -iname '*.generated.js' -exec rm {} \; 
 
-inject_css \
-  stylesheet/formatted \
-  stylesheet
+npm run uglify \
+  --src=src/js/readable-code.js \
+  --dst=src/js/unreadable-code.generated.js
 
-inject_definition \
-  mean/array-idea \
-  Mean/Array \
-  8,8
+inject_source \
+  ubiquitous-language/card-game/unreadable-code \
+  js/unreadable-code.generated.js \
+  '1,$'
 
-inject_definition \
-  mean/non-empty-array-idea \
-  Mean/NonEmptyArray \
-  8,11
+inject_source \
+  unrepresentable-states/stylesheet/formatted \
+  css/stylesheet.css \
+  '1,$'
 
-inject_definition \
-  stylesheet/array-idea \
-  Stylesheet/Array \
-  29,29
+inject_source \
+  ubiquitous-language/card-game/model \
+  purs/CardGame.purs \
+  '21,41'
 
-inject_definition \
-  stylesheet/array-sort-and-validate-idea \
-  Stylesheet/Array \
-  29,31
+inject_source \
+  ubiquitous-language/card-game/model-card \
+  purs/CardGame.purs \
+  '21,41'
 
-inject_definition \
-  stylesheet/record-idea \
-  Stylesheet/Record \
-  27,32
+inject_source \
+  ubiquitous-language/card-game/model-suit-and-rank \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-deck \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-shuffled-deck \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-shuffle \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-deal \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-hand \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-pick-up-card \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/card-game/model-player-and-game \
+  purs/CardGame.purs \
+  '21,41'
+
+inject_source \
+  ubiquitous-language/diagram \
+  dot/ubiquitous-language.dot \
+  '1,$'
+
+inject_source \
+  ubiquitous-language/card-game/flow-shuffle \
+  dot/card-game/flow.dot \
+  '6,16'
+
+inject_source \
+  ubiquitous-language/card-game/flow-deal \
+  dot/card-game/flow.dot \
+  '15,29'
+
+inject_source \
+  ubiquitous-language/card-game/flow-pick-up-card \
+  dot/card-game/flow.dot \
+  '28,42'
+
+inject_source \
+  ubiquitous-language/card-game/flow \
+  dot/card-game/flow.dot \
+  '6,42'
+
+inject_source \
+  unrepresentable-states/mean/array-idea \
+  purs/Mean/Array.purs \
+  '8,8'
+
+inject_source \
+  unrepresentable-states/mean/non-empty-array-idea \
+  purs/Mean/NonEmptyArray.purs \
+  '8,11'
+
+inject_source \
+  unrepresentable-states/stylesheet/array-idea \
+  purs/Stylesheet/Array.purs \
+  '29,29'
+
+inject_source \
+  unrepresentable-states/stylesheet/array-sort-and-validate-idea \
+  purs/Stylesheet/Array.purs \
+  '29,31'
+
+inject_source \
+  unrepresentable-states/stylesheet/record-idea \
+  purs/Stylesheet/Record.purs \
+  '27,32'
 
 inject_executable \
-  mean/array-valid \
+  unrepresentable-states/mean/array-valid \
   Mean/Array/Valid \
   Mean.Array.Valid \
   12,13
 
 inject_executable \
-  mean/array-invalid \
+  unrepresentable-states/mean/array-invalid \
   Mean/Array/Invalid \
   Mean.Array.Invalid \
   12,13
 
 inject_executable \
-  mean/non-empty-array \
+  unrepresentable-states/mean/non-empty-array \
   Mean/NonEmptyArray \
   Mean.NonEmptyArray \
   12,17
 
 inject_executable \
-  stylesheet/array-valid \
+  unrepresentable-states/stylesheet/array-valid \
   Stylesheet/Array/Valid \
   Stylesheet.Array.Valid \
   20,35
 
 inject_executable \
-  stylesheet/array-invalid \
+  unrepresentable-states/stylesheet/array-invalid \
   Stylesheet/Array/Invalid \
   Stylesheet.Array.Invalid \
   20,36
 
 inject_executable \
-  stylesheet/array-sort-and-validate-valid \
+  unrepresentable-states/stylesheet/array-sort-and-validate-valid \
   Stylesheet/ArraySortAndValidate/Valid \
   Stylesheet.ArraySortAndValidate.Valid \
   24,39
 
 inject_executable \
-  stylesheet/array-sort-and-validate-invalid \
+  unrepresentable-states/stylesheet/array-sort-and-validate-invalid \
   Stylesheet/ArraySortAndValidate/Invalid \
   Stylesheet.ArraySortAndValidate.Invalid \
   24,40
 
 inject_executable \
-  stylesheet/record \
+  unrepresentable-states/stylesheet/record \
   Stylesheet/Record \
   Stylesheet.Record \
   14,35

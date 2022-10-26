@@ -1,0 +1,37 @@
+graph TD
+
+classDef primary fill:#283,stroke:#333,stroke-width:4px;
+classDef secondary fill:#228,stroke:#333,stroke-width:4px;
+classDef actor fill:#244,stroke:#333,stroke-width:4px;
+
+ubiquitous_language["Ubiquitous Language"]
+class ubiquitous_language primary
+
+delivery_team((Delivery Team))
+class delivery_team actor
+delivery_team --- ubiquitous_language
+
+domain_experts((Domain Experts))
+class domain_experts actor
+domain_experts --- ubiquitous_language
+
+application_code(["Application Code"])
+class application_code secondary
+ubiquitous_language --- application_code 
+
+conversations(["Converastions"])
+class conversations secondary
+ubiquitous_language --- conversations 
+
+documentation(["Documentation"])
+class documentation secondary
+ubiquitous_language --- documentation 
+
+specification(["Specification"])
+class specification secondary
+ubiquitous_language --- specification 
+
+testing_code(["Testing Code"])
+class testing_code secondary
+ubiquitous_language --- testing_code 
+
