@@ -4,11 +4,50 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.33",
+    "@release-it/conventional-changelog": "^5",
     "@slidev/cli": "^0.36.7",
+    "release-it": "^15",
     "uglify-js": "^3.17.3"
   },
   "scripts": {
-    "uglify": "uglifyjs $npm_config_src --compress --mangle --toplevel | fold -w120 | tail -n +12 | head -n 25 > $npm_config_dst",
-    "start": "slidev"
+    "build": "slidev build",
+    "start": "slidev",
+    "uglify": "uglifyjs $npm_config_src --compress --mangle --toplevel | fold -w120 | tail -n +12 | head -n 25 > $npm_config_dst"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "requireCleanWorkingDir": true
+    },
+    "github": {
+      "release": true,
+      "releaseName": "Release ${version}",
+      "tokenRef": "GITHUB_TOKEN"
+    },
+    "npm": {
+      "publish": "false"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "refactor",
+              "hidden": true
+            }
+          ]
+        }
+      }
+    }
   }
 }
