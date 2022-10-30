@@ -1,0 +1,7 @@
+---
+layout: center
+---
+
+```purescript
+>>>src<<<
+```

@@ -4,7 +4,7 @@ layout: two-cols
 
 ##### *stylesheet.purs*
 
-```purescript {18}
+```purescript {16}
 >>>purs_src<<<
 ```
 

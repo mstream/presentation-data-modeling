@@ -186,6 +186,71 @@ inject_source \
   '6,42'
 
 inject_source \
+  unrepresentable-states/contact-details/weak-model \
+  purs/ContactDetails/WeakModel.purs \
+  '3,9'
+
+inject_source \
+  unrepresentable-states/contact-details/weak-model-requirements \
+  purs/ContactDetails/WeakModel.purs \
+  '3,9'
+
+inject_source \
+  unrepresentable-states/contact-details/consistency-boundaries \
+  purs/ContactDetails/ConsistencyBoundaries.purs \
+  '7,25'
+
+inject_source \
+  unrepresentable-states/contact-details/consistency-boundaries-requirements \
+  purs/ContactDetails/ConsistencyBoundaries.purs \
+  '7,25'
+
+inject_source \
+  unrepresentable-states/contact-details/optional-values \
+  purs/ContactDetails/OptionalValues.purs \
+  '9,23'
+
+inject_source \
+  unrepresentable-states/contact-details/optional-values-requirements \
+  purs/ContactDetails/OptionalValues.purs \
+  '9,23'
+
+inject_source \
+  unrepresentable-states/contact-details/refined-strings \
+  purs/ContactDetails/RefinedStrings.purs \
+  '13,33'
+
+inject_source \
+  unrepresentable-states/contact-details/refined-strings-requirements \
+  purs/ContactDetails/RefinedStrings.purs \
+  '13,34'
+
+inject_source \
+  unrepresentable-states/contact-details/discriminated-union \
+  purs/ContactDetails/DiscriminatedUnion.purs \
+  '15,41'
+
+inject_source \
+  unrepresentable-states/contact-details/real-name-and-nickname \
+  purs/ContactDetails/RealNameAndNickname.purs \
+  '16,27'
+
+inject_source \
+  unrepresentable-states/contact-details/real-name-and-nickname-optional \
+  purs/ContactDetails/RealNameAndNicknameOptional.purs \
+  '16,20'
+
+inject_source \
+  unrepresentable-states/contact-details/real-name-and-nickname-alternative \
+  purs/ContactDetails/RealNameAndNicknameAlternative.purs \
+  '16,19'
+
+inject_source \
+  unrepresentable-states/contact-details/real-name-and-nickname-union \
+  purs/ContactDetails/RealNameAndNicknameUnion.purs \
+  '16,25'
+
+inject_source \
   unrepresentable-states/mean/array-idea \
   purs/Mean/Array.purs \
   '8,8'
@@ -210,52 +275,125 @@ inject_source \
   purs/Stylesheet/Record.purs \
   '27,32'
 
+inject_source \
+  unrepresentable-states/survey/prompts-and-responses-idea \
+  purs/Survey/PromptsAndResponses.purs \
+  '6,9'
+
+inject_source \
+  unrepresentable-states/survey/prompt-and-response-pairs-idea \
+  purs/Survey/PromptAndResponsePairs.purs \
+  '6,11'
+
+inject_source \
+  unrepresentable-states/survey/question-index-idea \
+  purs/Survey/QuestionIndex.purs \
+  '5,8'
+
+inject_source \
+  unrepresentable-states/survey/current-question-idea \
+  purs/Survey/CurrentQuestion.purs \
+  '5,8'
+
+inject_source \
+  unrepresentable-states/survey/previous-and-next-questions-idea \
+  purs/Survey/PreviousAndNextQuestions.purs \
+  '5,9'
+
 inject_executable \
   unrepresentable-states/mean/array-valid \
   Mean/Array/Valid \
   Mean.Array.Valid \
-  12,13
+  '12,13'
 
 inject_executable \
   unrepresentable-states/mean/array-invalid \
   Mean/Array/Invalid \
   Mean.Array.Invalid \
-  12,13
+  '12,13'
 
 inject_executable \
   unrepresentable-states/mean/non-empty-array \
   Mean/NonEmptyArray \
   Mean.NonEmptyArray \
-  12,17
+  '12,17'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-valid \
   Stylesheet/Array/Valid \
   Stylesheet.Array.Valid \
-  20,35
+  '20,35'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-invalid \
   Stylesheet/Array/Invalid \
   Stylesheet.Array.Invalid \
-  20,36
+  '20,36'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-sort-and-validate-valid \
   Stylesheet/ArraySortAndValidate/Valid \
   Stylesheet.ArraySortAndValidate.Valid \
-  24,39
+  '24,39'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-sort-and-validate-invalid \
   Stylesheet/ArraySortAndValidate/Invalid \
   Stylesheet.ArraySortAndValidate.Invalid \
-  24,40
+  '24,40'
 
 inject_executable \
   unrepresentable-states/stylesheet/record \
   Stylesheet/Record \
   Stylesheet.Record \
-  14,35
+  '14,35'
+
+inject_executable \
+  unrepresentable-states/survey/prompts-and-responses-valid \
+  Survey/PromptsAndResponses/Valid \
+  Survey.PromptsAndResponses.Valid \
+  '15,27'
+
+inject_executable \
+  unrepresentable-states/survey/prompts-and-responses-invalid \
+  Survey/PromptsAndResponses/Invalid \
+  Survey.PromptsAndResponses.Invalid \
+  '15,19'
+
+inject_executable \
+  unrepresentable-states/survey/prompt-and-response-pairs \
+  Survey/PromptAndResponsePairs \
+  Survey.PromptAndResponsePairs \
+  '15,20'
+
+inject_executable \
+  unrepresentable-states/survey/question-index-valid \
+  Survey/QuestionIndex/Valid \
+  Survey.QuestionIndex.Valid \
+  '15,23'
+
+inject_executable \
+  unrepresentable-states/survey/question-index-invalid \
+  Survey/QuestionIndex/Invalid \
+  Survey.QuestionIndex.Invalid \
+  '15,23'
+
+inject_executable \
+  unrepresentable-states/survey/current-question-valid \
+  Survey/CurrentQuestion/Valid \
+  Survey.CurrentQuestion.Valid \
+  '15,23'
+
+inject_executable \
+  unrepresentable-states/survey/current-question-invalid \
+  Survey/CurrentQuestion/Invalid \
+  Survey.CurrentQuestion.Invalid \
+  '15,23'
+
+inject_executable \
+  unrepresentable-states/survey/previous-and-next-questions \
+  Survey/PreviousAndNextQuestions \
+  Survey.PreviousAndNextQuestions \
+  '15,20'
 
 

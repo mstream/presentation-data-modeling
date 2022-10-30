@@ -1,6 +1,9 @@
 { name = "my-project"
 , dependencies =
-  [ "arrays"
+  [ "argonaut-codecs"
+  , "argonaut-core"
+  , "argonaut-generic"
+  , "arrays"
   , "console"
   , "effect"
   , "either"

@@ -2,7 +2,7 @@
 layout: center
 ---
 
-The domain code should not use programmer jargon
+The domain code should not use programmer jargon:
 
 * Card
 * Deal

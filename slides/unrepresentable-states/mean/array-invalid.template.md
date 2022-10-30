@@ -16,6 +16,6 @@ layout: two-cols
 >>>purs_out<<<
 ```
 
-<mdi-checkbox-marked class="text-red-500" />
+<mdi-checkbox-marked class="text-red-500" /> Division by zero
 
 

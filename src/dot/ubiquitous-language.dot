@@ -15,6 +15,10 @@ domain_experts((Domain Experts))
 class domain_experts actor
 domain_experts --- ubiquitous_language
 
+stakeholders((Stakeholders))
+class stakeholders actor
+stakeholders --- ubiquitous_language
+
 application_code(["Application Code"])
 class application_code secondary
 ubiquitous_language --- application_code 
