@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build": "slidev build",
+    "release": "release-it",
     "start": "slidev",
     "uglify": "uglifyjs $npm_config_src --compress --mangle --toplevel | fold -w120 | tail -n +12 | head -n 25 > $npm_config_dst"
   },
