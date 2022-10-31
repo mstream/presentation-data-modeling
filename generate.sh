@@ -218,7 +218,7 @@ inject_source \
 inject_source \
   unrepresentable-states/contact-details/refined-strings \
   purs/ContactDetails/RefinedStrings.purs \
-  '13,33'
+  '13,34'
 
 inject_source \
   unrepresentable-states/contact-details/refined-strings-requirements \
