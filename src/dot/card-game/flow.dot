@@ -12,7 +12,7 @@ class shuffle verb
 deck(["Deck"])
 class deck noun
 
-shuffled_deck_original(["ShuffledDeck<br/>(original)"])
+shuffled_deck_original(["ShuffledDeck"])
 class shuffled_deck_original noun
 
 shuffled_deck_original --> deal
@@ -22,7 +22,7 @@ deal --> shuffled_deck_updated
 deal["Deal<br/>[take a card from the top and put it on the table]"]
 class deal verb
 
-shuffled_deck_updated(["ShuffledDeck<br/>(updated)"])
+shuffled_deck_updated(["ShuffledDeck"])
 class shuffled_deck_updated noun
 
 card(["Card<br/>(on table)"])
@@ -35,9 +35,9 @@ pick_up_card --> hand_updated
 pick_up_card["PickUpCard<br/>[take it from the table and insert into your hand]"]
 class pick_up_card verb
 
-hand_original(["Hand<br/>(original)"])
+hand_original(["Hand"])
 class hand_original noun
 
-hand_updated(["Hand<br/>(updated)"])
+hand_updated(["Hand"])
 class hand_updated noun
 

@@ -1,14 +1,8 @@
 @charset "UTF-8";
 
-@import url("dotmatrix.css") print;
 @import url("bigscreen.css") projection, tv;
 
-@namespace url("http://www.w3.org/1999/xhtml");
 @namespace svg url("http://www.w3.org/2000/svg");
-
-body {
-  color: rgb(11, 22, 33);
-}
 
 svg|a { 
   stroke: purple;

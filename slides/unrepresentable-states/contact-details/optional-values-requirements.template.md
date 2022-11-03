@@ -18,3 +18,4 @@ Constraints:
 * E-mail value should be a well-formed e-mail address.
 * The middle name should be 1-character long.
 * The first and the last name should not be longer than 50 characters.
+* None of these values can be empty string.

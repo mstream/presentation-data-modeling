@@ -48,6 +48,49 @@ function inject_source() {
   echo "${template_file} -> ${generated_file}"
 }
 
+function inject_idea() {
+  local template_name="$1"
+  local src_name="$2"
+  local range="$3"
+  local diagram_name="$4"
+  local template_file="slides/${template_name}.template.md"
+  local generated_file="slides/${template_name}.generated.md"
+  local src_file="src/${src_name}"
+  local src_pattern='>>>src<<<'
+  local src=$(print_range "${range}" "${src_file}")
+  local diagram_file="src/dot/${diagram_name}.dot"
+  local diagram_pattern='>>>diagram<<<'
+  local diagram=$(cat "${diagram_file}")
+  local template=$(cat "${template_file}")
+
+  if [ -z "${template}" ]; then
+    echo "the ${template_file} template does not exist"
+    exit 1
+  fi
+
+  if [ -z "${src}" ]; then
+    echo "the ${src_file} source file does not contain any code"
+    exit 1
+  fi
+
+  local template_with_src=$(\
+    echo -n "${template}" | print_before "${src_pattern}";\
+    echo "${src}";\
+    echo -n "${template}" | print_after "${src_pattern}"\
+  )
+  
+  local template_with_src_and_diagram=$(\
+    echo -n "${template_with_src}" | print_before "${diagram_pattern}";\
+    echo "${diagram}";\
+    echo -n "${template_with_src}" | print_after "${diagram_pattern}"\
+  )
+  
+  echo -n "${template_with_src_and_diagram}" > "${generated_file}"  
+  echo "${template_file} -> ${generated_file}"
+}
+
+
+
 function inject_executable() {
   local template_name="$1"
   local src_name="$2"
@@ -186,6 +229,11 @@ inject_source \
   '6,42'
 
 inject_source \
+  unrepresentable-states/combinations \
+  dot/substates.dot \
+  '1,$'
+
+inject_source \
   unrepresentable-states/contact-details/weak-model \
   purs/ContactDetails/WeakModel.purs \
   '3,9'
@@ -248,7 +296,7 @@ inject_source \
 inject_source \
   unrepresentable-states/contact-details/real-name-and-nickname-union \
   purs/ContactDetails/RealNameAndNicknameUnion.purs \
-  '16,25'
+  '18,26'
 
 inject_source \
   unrepresentable-states/mean/array-idea \
@@ -275,30 +323,35 @@ inject_source \
   purs/Stylesheet/Record.purs \
   '27,32'
 
-inject_source \
+inject_idea \
   unrepresentable-states/survey/prompts-and-responses-idea \
   purs/Survey/PromptsAndResponses.purs \
-  '6,9'
+  '6,9' \
+  survey/prompts-and-responses
 
-inject_source \
+inject_idea \
   unrepresentable-states/survey/prompt-and-response-pairs-idea \
   purs/Survey/PromptAndResponsePairs.purs \
-  '6,11'
+  '6,11' \
+  survey/prompt-and-response-pairs
 
-inject_source \
+inject_idea \
   unrepresentable-states/survey/question-index-idea \
   purs/Survey/QuestionIndex.purs \
-  '5,8'
+  '5,8' \
+  survey/question-index
 
-inject_source \
+inject_idea \
   unrepresentable-states/survey/current-question-idea \
   purs/Survey/CurrentQuestion.purs \
-  '5,8'
+  '5,8' \
+  survey/current-question
 
-inject_source \
+inject_idea \
   unrepresentable-states/survey/previous-and-next-questions-idea \
   purs/Survey/PreviousAndNextQuestions.purs \
-  '5,9'
+  '5,9' \
+  survey/previous-and-next-questions
 
 inject_executable \
   unrepresentable-states/mean/array-valid \
@@ -322,31 +375,31 @@ inject_executable \
   unrepresentable-states/stylesheet/array-valid \
   Stylesheet/Array/Valid \
   Stylesheet.Array.Valid \
-  '20,35'
+  '20,29'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-invalid \
   Stylesheet/Array/Invalid \
   Stylesheet.Array.Invalid \
-  '20,36'
+  '20,30'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-sort-and-validate-valid \
   Stylesheet/ArraySortAndValidate/Valid \
   Stylesheet.ArraySortAndValidate.Valid \
-  '24,39'
+  '24,33'
 
 inject_executable \
   unrepresentable-states/stylesheet/array-sort-and-validate-invalid \
   Stylesheet/ArraySortAndValidate/Invalid \
   Stylesheet.ArraySortAndValidate.Invalid \
-  '24,40'
+  '24,34'
 
 inject_executable \
   unrepresentable-states/stylesheet/record \
   Stylesheet/Record \
   Stylesheet.Record \
-  '14,35'
+  '14,29'
 
 inject_executable \
   unrepresentable-states/survey/prompts-and-responses-valid \

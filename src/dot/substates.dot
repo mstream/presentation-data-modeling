@@ -1,0 +1,15 @@
+graph LR
+
+classDef substate fill:#283,stroke:#333,stroke-width:4px;
+
+subgraph "state"
+direction LR
+substate_1["substate 1"]
+substate_2["substate 2"]
+substate_["..."]
+substate_n["substate n"]
+end
+
+class substate_1,substate_2,substate_,substate_n substate
+
+

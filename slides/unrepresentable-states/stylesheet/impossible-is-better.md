@@ -2,7 +2,7 @@
 layout: statement
 ---
 
-Testing is good\
-Impossible is better
+Testing is *good*\
+Impossible is **better**
 
 

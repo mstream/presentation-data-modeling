@@ -13,11 +13,7 @@ theme: default
 -->
 
 ---
-src: slides/inclusions.md
----
-
----
-src: slides/exclusions.md
+src: slides/summary.md
 ---
 
 ---
@@ -25,7 +21,15 @@ src: slides/ubiquitous-language/cover.md
 ---
 
 ---
-src: slides/ubiquitous-language/agile.md
+src: slides/ubiquitous-language/assumption.md
+---
+
+---
+src: slides/ubiquitous-language/agile-1.md
+---
+
+---
+src: slides/ubiquitous-language/agile-2.md
 ---
 
 ---
@@ -50,6 +54,10 @@ src: slides/ubiquitous-language/card-game/unreadable-code.generated.md
 
 ---
 src: slides/ubiquitous-language/card-game/model.generated.md
+---
+
+---
+src: slides/ubiquitous-language/card-game/glossary.md
 ---
 
 ---
@@ -105,11 +113,15 @@ src: slides/ubiquitous-language/card-game/flow.generated.md
 ---
 
 ---
-src: slides/ubiquitous-language/card-game/programmer-jargon.md
+src: slides/ubiquitous-language/card-game/programmer-jargon-1.md
 ---
 
 ---
-src: slides/ubiquitous-language/card-game/data-type-jargon.md
+src: slides/ubiquitous-language/card-game/programmer-jargon-2.md
+---
+
+---
+src: slides/ubiquitous-language/card-game/programming-language-abstracts.md
 ---
 
 ---
@@ -326,4 +338,16 @@ src: slides/unrepresentable-states/contact-details/real-name-and-nickname-altern
 
 ---
 src: slides/unrepresentable-states/contact-details/real-name-and-nickname-union.generated.md
+---
+
+---
+src: slides/unrepresentable-states/combinations.generated.md
+---
+
+---
+src: slides/end.md
+---
+
+---
+src: slides/questions.md
 ---

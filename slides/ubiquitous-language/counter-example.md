@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: center
 ---
 
 | domain expert | delivery team | source code |

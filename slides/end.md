@@ -1,0 +1,6 @@
+---
+layout: center
+---
+
+# Thank you!
+

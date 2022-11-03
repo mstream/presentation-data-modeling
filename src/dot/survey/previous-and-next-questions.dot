@@ -1,0 +1,28 @@
+graph LR
+
+classDef prompt fill:#283,stroke:#333,stroke-width:4px;
+classDef response fill:#228,stroke:#333,stroke-width:4px;
+
+subgraph "current question"
+direction LR
+prompt_current["current prompt"]
+response_current["current response"]
+end
+
+subgraph "question 1"
+direction LR
+prompt_1["prompt 1"]
+response_1["response 1"]
+end
+
+subgraph "question 3"
+direction LR
+prompt_3["prompt 3"]
+response_3["response 3"]
+end
+
+class prompt_current,prompt_1,prompt_3 prompt
+class response_current,response_1,response_3 response
+
+response_1 --> response_current
+response_current --> response_3

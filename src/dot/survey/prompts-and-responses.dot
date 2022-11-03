@@ -1,0 +1,21 @@
+graph LR
+
+classDef prompt fill:#283,stroke:#333,stroke-width:4px;
+classDef response fill:#228,stroke:#333,stroke-width:4px;
+
+prompt_1["prompt 1"]
+prompt_2["prompt 2"]
+prompt_3["prompt 3"]
+
+response_1["response 1"]
+response_2["response 2"]
+response_3["response 3"]
+
+class prompt_1,prompt_2,prompt_3 prompt
+class response_1,response_2,response_3 response
+
+prompt_1 --> prompt_2
+prompt_2 --> prompt_3
+
+response_1 --> response_2
+response_2 --> response_3

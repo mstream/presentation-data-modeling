@@ -13,6 +13,7 @@ import Prelude
 
 import Data.Either.Nested (type (\/))
 import Data.Maybe (Maybe)
+import Data.Tuple.Nested (type (/\))
 
 type Contact =
   { name ∷ Name
@@ -22,7 +23,7 @@ type Contact =
 data Name
   = Real RealName
   | Substitute Nickname
-  | Both RealName Nickname
+  | Both (RealName /\ Nickname)
 
 type RealName =
   { firstName ∷ String50
