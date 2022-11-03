@@ -10,7 +10,7 @@
     "uglify-js": "^3.17.3"
   },
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build --base data-modeling-presentation",
     "release": "release-it",
     "start": "slidev",
     "uglify": "uglifyjs $npm_config_src --compress --mangle --toplevel | fold -w120 | tail -n +12 | head -n 25 > $npm_config_dst"
