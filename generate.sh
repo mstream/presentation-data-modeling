@@ -326,13 +326,13 @@ inject_source \
 inject_idea \
   unrepresentable-states/survey/prompts-and-responses-idea \
   purs/Survey/PromptsAndResponses.purs \
-  '6,9' \
+  '5,8' \
   survey/prompts-and-responses
 
 inject_idea \
   unrepresentable-states/survey/prompt-and-response-pairs-idea \
   purs/Survey/PromptAndResponsePairs.purs \
-  '6,11' \
+  '5,10' \
   survey/prompt-and-response-pairs
 
 inject_idea \

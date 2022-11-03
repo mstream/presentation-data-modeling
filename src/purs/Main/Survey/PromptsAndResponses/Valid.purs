@@ -2,7 +2,7 @@ module Main.Survey.PromptsAndResponses.Valid (main) where
 
 import Prelude
 
-import Data.Argonaut.Core (stringify, stringifyWithIndent)
+import Data.Argonaut.Core (stringifyWithIndent)
 import Data.Argonaut.Encode (encodeJson)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)

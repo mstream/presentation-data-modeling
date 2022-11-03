@@ -16,7 +16,7 @@ import Stylesheet.Array
   , sortAndValidate
   , style
   )
-import Stylesheet.Common (color, purple, rgb, stroke, url)
+import Stylesheet.Common (purple, stroke, url)
 
 main ∷ Effect Unit
 main = either (const $ pure unit) (info <<< render) stylesheet
