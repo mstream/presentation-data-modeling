@@ -25,9 +25,7 @@
       "releaseName": "Release ${version}",
       "tokenRef": "GITHUB_TOKEN"
     },
-    "npm": {
-      "publish": "false"
-    },
+    "npm": false,
     "plugins": {
       "@release-it/conventional-changelog": {
         "infile": "CHANGELOG.md",
