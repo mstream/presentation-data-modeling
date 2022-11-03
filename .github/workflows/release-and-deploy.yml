@@ -27,6 +27,8 @@ jobs:
         run: "nix develop -c npm run release -- --ci"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: "Generate slides"
+        run: "./generate.sh"
       - name: "Bundle web application"
         run: "nix develop -c npm run build"
       - name: "Deploy to GitHub Pages"
