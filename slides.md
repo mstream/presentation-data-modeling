@@ -13,7 +13,7 @@ theme: default
 -->
 
 ---
-src: slides/summary.md
+src: slides/goals.md
 ---
 
 ---
@@ -121,7 +121,11 @@ src: slides/ubiquitous-language/card-game/programmer-jargon-2.md
 ---
 
 ---
-src: slides/ubiquitous-language/card-game/programming-language-abstracts.md
+src: slides/ubiquitous-language/card-game/programming-language-abstracts-1.md
+---
+
+---
+src: slides/ubiquitous-language/card-game/programming-language-abstracts-2.md
 ---
 
 ---
@@ -342,6 +346,10 @@ src: slides/unrepresentable-states/contact-details/real-name-and-nickname-union.
 
 ---
 src: slides/unrepresentable-states/combinations.generated.md
+---
+
+---
+src: slides/summary.md
 ---
 
 ---

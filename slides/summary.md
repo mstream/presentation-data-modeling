@@ -2,13 +2,10 @@
 layout: center
 ---
 
-# Goals of this presentation
+# Summary
 
-<mdi-arrow-up-bold-circle class="text-green-500" /> cooperation with domain experts<br/>
-<mdi-arrow-up-bold-circle class="text-green-500" /> conveying source code intent<br/>
-<mdi-arrow-up-bold-circle class="text-green-500" /> efficiency of iterative development<br/> 
-<mdi-arrow-up-bold-circle class="text-green-500" /> expressiveness of APIs<br/>
-<br/>
-<mdi-arrow-down-bold-circle class="text-green-500" /> room for errors<br/>
-<mdi-arrow-down-bold-circle class="text-green-500" /> number of unit tests<br/>
-<mdi-arrow-down-bold-circle class="text-green-500" /> accidental complexity<br/>
+- use ubiquitous language everywhere
+- encode business requirements in a code as much as it is possible 
+- strive to keep the domain code free from programming specific terms
+- always look for types which represent domain model values better
+- shape the data model the way it minimizes the room for errors

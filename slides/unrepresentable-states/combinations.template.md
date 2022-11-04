@@ -8,9 +8,9 @@ layout: two-cols
 
 ::right::
 
-invalid substates ratio: 10%
+proportion of invalid substates: 10%
 
-| number of substates | invalid states ratio |
+| number of substates | proportion of invalid states |
 | --- | --- |
 | 1 | 10% |
 | 2 | 19% |

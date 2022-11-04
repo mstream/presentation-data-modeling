@@ -21,10 +21,10 @@ stylesheet ∷ Stylesheet
 stylesheet =
   [ style [ "svg" ] "a"
       [ stroke purple ]
-  , import_ (url "dotmatrix.css")
-      [ "print" ]
   , namespace [ "svg" ]
       (url "http://www.w3.org/2000/svg")
+  , import_ (url "dotmatrix.css")
+      [ "print" ]
   , charset "UTF-8"
   , charset "UTF-9000"
   ]
