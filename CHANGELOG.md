@@ -1,5 +1,12 @@
 
 
+## [0.2.0](https://github.com/mstream/data-modeling-presentation/compare/0.1.3...0.2.0) (2022-11-04)
+
+
+### Features
+
+* add summary ([0adf09d](https://github.com/mstream/data-modeling-presentation/commit/0adf09d9730e31718047a54981c7c44c5bba9e5a))
+
 ### [0.1.3](https://github.com/mstream/data-modeling-presentation/compare/0.1.2...0.1.3) (2022-11-03)
 
 ### [0.1.2](https://github.com/mstream/data-modeling-presentation/compare/0.1.1...0.1.2) (2022-11-03)
