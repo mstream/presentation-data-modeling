@@ -1,5 +1,7 @@
 
 
+### [0.2.2](https://github.com/mstream/presentation-data-modeling/compare/0.2.1...0.2.2) (2023-11-12)
+
 ### [0.2.1](https://github.com/mstream/data-modeling-presentation/compare/0.2.0...0.2.1) (2022-11-04)
 
 ## [0.2.0](https://github.com/mstream/data-modeling-presentation/compare/0.1.3...0.2.0) (2022-11-04)
